@@ -1,0 +1,78 @@
+class person(object):
+
+    def __init__(self, name, age, adhar):
+        self.name = name
+        self.age  = age
+        self.adhar = adhar
+
+    def printinfo(self):
+        print(self.name, self.age, self.adhar)
+
+class student(person):
+
+    def __init__(self, name, age, adhar, subjs):
+        super().__init__(name, age, adhar)
+        self.subjs = subjs
+        self.avg = 0
+
+    def printinfo(self):
+        super().printinfo()
+        print('SUBJECTS: ', self.subjs)
+        print('AVERAGE : ', self.avg)
+
+    def calcavg(self):
+        self.avg = sum(list(self.subjs.values()))/ len(list(self.subjs.values()))
+        return self.avg
+        
+class employee(person):
+    
+    def __init__(self, name, age, adhar, company, salary):
+        super().__init__(name, age, adhar)
+        self.company = company
+        self.salary = salary
+        self.tax    = 0
+
+    def printinfo(self):
+        super().printinfo()
+        print('COMPANY: ', self.company)
+        print('SALARY : ', self.salary)
+
+    def calctax(self):
+        self.tax = 0.1 * int(self.salary.split()[0])
+        return self.tax
+        
+# --------------------------------------------
+
+
+if __name__ == "__main__":
+
+    # ------------------------ Inheritance
+
+    p1 = person('Rajesh', 14, '1234-5678-0123')
+    p1.printinfo()
+
+    print('-'*60)
+
+    s1 = student('Anil', 14, '1234-5678-0123', {'phy':100})
+    s1.printinfo()
+    print('AVERAGE : ',s1.calcavg())
+
+    print('-'*60)
+
+    e1 = employee('Sunil', 34, '1234-5678-0123', 'Infosys', '400000 INR')
+    e1.printinfo()
+    print('TAX : ',e1.calctax())
+
+    # ------------------------ Polymorphism
+
+    print('Polymorphism \n\n')
+    p = p1
+    p.printinfo()
+
+    p = s1
+    p.printinfo()
+
+    p = e1
+    p.printinfo()
+    
+        
