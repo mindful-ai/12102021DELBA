@@ -1,0 +1,26 @@
+NOTE: refer to slides: tensorflow_ann.pdf in the repository and also slides in the LMS
+
+1. Compare McCulloch-Pitts Neuron vs Perceptron
+2. The role of activation function, loss function, optimizer functions
+   Activation function decides the actions of the neurons(nucleus has
+   two things: summation of weghts and biases plus an activation function), 
+   loss function represents the error,
+   optimizer function helps find the best value for parameters
+3. Different types of activation, loss and optimizer functions and their tasks, graphs, derivatives
+4. Ranges of several activation functions dicussed:
+	Example: for sigmoid range is 0 to 1, tanh -1 to +1, relu 0 to inf
+5. Tensorflow tensor?, functions: constant, variable, placeholder, mathematical functions
+                         assign, broadcast_to, numpy()
+6. Estimating parameters [W, b] in a network
+7. Loss functions in linear regression
+8. Dense(): a fully connected layer, every neuron connected to the neurons in next layer
+   Dropout(): Significance of dropout layers
+   EarlyStopping: Early stopping is crucial for gradient descent to "converge" to a sparse model
+	Overview different layers: refer https://www.tensorflow.org/api_docs/python/tf/keras/layers
+	Dropout, Flatten, Dense, BatchNormalization, Conv1D, Conv2d
+
+        
+   
+
+ 
+   
